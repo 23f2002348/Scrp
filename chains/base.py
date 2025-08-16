@@ -43,8 +43,7 @@ class BaseWorkflow(ABC):
                 self, "memory", ConversationBufferWindowMemory(k=10, return_messages=True)  # Keep last 10 interactions
             )
 
-            logger.info(f"Initialized {self.__class__.__name__} with model {getattr(self.llm, "model", None) or getattr(self.llm, "model_name", "unknown")
-}")
+            logger.info(f"Initialized {self.__class__.__name__} with model {getattr(self.llm, 'model', None) or getattr(self.llm, 'model_name', 'unknown')}")
 
         except Exception as e:
             logger.error(f"Failed to initialize components: {e}")
